@@ -9,3 +9,5 @@ class Student < InteractiveRecord
     end
 
 end
+
+ #0=>1, 1=>"Sam", 2=>11
