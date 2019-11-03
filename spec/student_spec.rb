@@ -1,4 +1,5 @@
 require_relative 'spec_helper'
+require 'pry'
 
 describe Student do
   before :each do
@@ -93,10 +94,11 @@ describe Student do
     describe '#save' do
       it 'saves the student to the db' do
         new_student.save
+        binding.pry
         expect(DB[:conn].execute("SELECT * FROM students WHERE name = 'Sam'")).to eq([{"id"=>1, "name"=>"Sam", "grade"=>11}])
       end
 
-      it 'sets the student\'s id' do
+      it 'sets the stude                                   nt\'s id' do
         new_student.save
         expect(new_student.id).to eq(1)
       end
